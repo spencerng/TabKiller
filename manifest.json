@@ -1,0 +1,24 @@
+{
+
+  "manifest_version": 3,
+  "name": "Tab Killer",
+  "version": "0.1",
+  "description": "Kill off some tabs, at random",
+  "icons": {
+    "48": "icons/icon-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["player.js"]
+    }
+  ],
+  "permissions": [
+    "contextMenus",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "kill.js"
+  }
+}
